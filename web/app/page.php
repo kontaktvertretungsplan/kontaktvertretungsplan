@@ -243,7 +243,7 @@
 
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
-      <b>Version</b> 2.4.0
+      <b>Version</b> 2.0.3
     </div>
     <strong>Copyright &copy; 2018 <a href="https://milchinsel.de">milchinsel.de</a>.</strong> All rights
     reserved.
