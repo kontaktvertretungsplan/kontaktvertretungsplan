@@ -6,9 +6,6 @@ Entwickelt und bertreut wird das Projekt von [Clemens Riese](https://milchinsel.
 Weitere Infos:
 https://kontakt-vertretungsplan.de
 
-## Quellcode Veröffentlichung
-Der Quellcode wird vorraussichtlich spätestens mitte März veröffentlicht.
-
 ## Installation
 Vorraussetzungen für den Webserver:
 * Apache
