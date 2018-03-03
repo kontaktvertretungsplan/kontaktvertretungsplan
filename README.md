@@ -10,12 +10,13 @@ https://kontakt-vertretungsplan.de
 Der Quellcode wird vorraussichtlich spätestens mitte März veröffentlicht.
 
 ## Installation
-Webserver:
+Vorraussetzungen für den Webserver:
 * Apache
-* PHP
-* MySQL
+* PHP (getestet unter PHP 7.1)
+* MySQL (gestestet unter MariaDB 10.1)
+* HTTPS
 
-Lade dir die aktuellste Version von Konatkt:Vertretungsplan von der [Release Seite](https://github.com/kontaktvertretungsplan/kontaktvertretungsplan/releases) herunter.
+Lade dir die aktuellste Version von Kontakt:Vertretungsplan von der [Release Seite](https://github.com/kontaktvertretungsplan/kontaktvertretungsplan/releases) herunter.
 Entpacke sie im Webverzeichnis deiner Wahl.
 
-Passe die Datei `config/db.json` mit deinen Einstellungen an.
+Passe die Datei `config/db.json` mit deinen Datenbank Einstellungen an.
