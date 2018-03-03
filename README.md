@@ -8,3 +8,5 @@ https://kontakt-vertretungsplan.de
 
 ## Quellcode Veröffentlichung
 Der Quellcode wird vorraussichtlich spätestens mitte März veröffentlicht.
+
+## Installation
