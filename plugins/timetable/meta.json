@@ -1,0 +1,26 @@
+{
+	"name": "Vertretung",
+	"version": "0.1",
+	"description" : "Plugin to access timetable",
+	"url": "https://milchinsel.de/",
+	"author": [
+		{
+		"name": "Clemens Riese",
+		"url": "https://milchinsel.de/"
+		}
+	],
+	"integration": {
+		"commands": [
+			{
+				"command": "stundenplan",
+				"shortcut": "P",
+				"alias": "stundenplan",
+				"significance": "100"
+			}
+		],
+		"start": {
+			"name": "trust",
+			"significance": "100"
+		}
+	}
+}

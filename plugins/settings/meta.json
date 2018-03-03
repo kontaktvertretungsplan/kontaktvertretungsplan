@@ -1,0 +1,26 @@
+{
+	"name": "Einstellungen",
+	"version": "0.1",
+	"description" : "Plugin for settings",
+	"url": "https://milchinsel.de/",
+	"author": [
+		{
+		"name": "Clemens Riese",
+		"url": "https://milchinsel.de/"
+		}
+	],
+	"integration": {
+		"commands": [
+			{
+				"command": "settings",
+				"shortcut": "",
+				"alias": "Einstellungen",
+				"significance": "100"
+			}
+		],
+		"start": {
+			"name": "trust",
+			"significance": "100"
+		}
+	}
+}

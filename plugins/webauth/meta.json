@@ -1,0 +1,26 @@
+{
+	"name": "Webauth",
+	"version": "0.1",
+	"description" : "Plugin to support auth for the webconfig",
+	"url": "https://milchinsel.de/",
+	"author": [
+		{
+		"name": "Clemens Riese",
+		"url": "https://milchinsel.de/"
+		}
+	],
+	"integration": {
+		"commands": [
+			{
+				"command": "trust",
+				"shortcut": "",
+				"alias": "",
+				"significance": "100"
+			}
+		],
+		"start": {
+			"name": "trust",
+			"significance": "100"
+		}
+	}
+}

@@ -1,0 +1,32 @@
+{
+	"name": "Info",
+	"version": "0.1",
+	"description" : "An information Plugin",
+	"url": "https://milchinsel.de/",
+	"author": [
+		{
+		"name": "Clemens Riese",
+		"url": "https://milchinsel.de/"
+		}
+	],
+	"integration": {
+		"commands": [
+			{
+				"command": "info",
+				"shortcut": "I",
+				"alias": "info",
+				"significance": "100"
+			},
+			{
+				"command": "help",
+				"shortcut": "",
+				"alias": "",
+				"significance": "100"
+			}
+		],
+		"start": {
+			"name": "",
+			"significance": ""
+		}
+	}
+}
