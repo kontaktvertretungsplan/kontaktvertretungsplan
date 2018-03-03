@@ -20,3 +20,9 @@ Lade dir die aktuellste Version von Kontakt:Vertretungsplan von der [Release Sei
 Entpacke sie im Webverzeichnis deiner Wahl.
 
 Passe die Datei `config/db.json` mit deinen Datenbank Einstellungen an.
+
+## Noch Fragen?
+Einfach melden:
+* E-Mail: hallo@kontakt-vertretungsplan.de
+* Twitter: [@kvertretung](https://twitter.com/kvertretung)
+* Instagram: [@kontaktvertretungsplan](https://instagram.com/kontaktvertretungsplan)
