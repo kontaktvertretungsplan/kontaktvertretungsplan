@@ -39,6 +39,9 @@ Die Kontakt:Vertretungsplan API ist gesondert dokumentiert.
 
 https://github.com/kontaktvertretungsplan/api#kontaktvertretungsplan-daten-api
 
+## Ich möchte das verwenden und/oder anderen zur Verfügung stellen
+Selbstverständlich darfst du Kontakt:Vertretunsplan für dich selber installieren, ausprobieren, verändern und nutzen. Hast du mehr mit Kontakt:Vertretungsplan vor (möchtest ), dann schreibe mir einfach kurz und wir klären alles wichtige gemeinsam.
+
 ## Noch Fragen?
 Einfach melden:
 * E-Mail: hallo@kontakt-vertretungsplan.de
