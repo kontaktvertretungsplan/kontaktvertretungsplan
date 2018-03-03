@@ -17,7 +17,17 @@ Lade dir die aktuellste Version von Kontakt:Vertretungsplan von der [Release Sei
 
 Passe die Datei `config/db.json` mit deinen Datenbank Einstellungen an.
 
-Navigiere nun mit einem Browser in dein Webverzeichnis und dort zur Datei `install.php` (https://deine.domain/dein_verzeichnis/install.php)
+Navigiere nun mit einem Browser in dein Webverzeichnis und dort zur Datei `install.php` (`https://deine.domain/dein_verzeichnis/install.php`). Folge den Anweisungen und fülle das Formular aus. (Formularfelder, die nach dem Speichern nicht verschwinden enthielten ungültige Werte)
+
+### Telegram Bot Token
+Dieser ist essentiell für die Verwendung von Kontakt:Vertretungsplan, wie dieser generiert wird, ist bei Telegram Dokumentiert:
+
+https://core.telegram.org/bots#6-botfather
+
+### Api Urls
+Diese sind die API Endpunkte für den Zugriff auf die Stundenpläne.
+
+Die Kontakt:Vertretungsplan API ist gesondert dokumentiert.
 
 ## Noch Fragen?
 Einfach melden:
