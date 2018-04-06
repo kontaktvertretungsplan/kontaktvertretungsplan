@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Kontakt:Vertretungsplan | milchinsel.de</title>
+  <title>Kontakt:Vertretungsplan</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -67,7 +67,7 @@
       <p class="login-box-msg">Die Session ist abgelaufen.</p>
       <br>
       <a href="?sec=login" class="btn btn-success btn-block btn-flat btn-lg">Neue Session</a>
-    
+
     </div>
   </div>
   <!-- /.login-box-body -->
@@ -90,34 +90,34 @@ function updateQueue() {
 	if (stopvar == false) {
 	  $.get( "?sec=ajax", function( data ) {
 		 //$( "#result" ).html( data );
-		
+
 		 var json = JSON.parse( data );
-		
+
 		 var valid = json['valid'];
 		 var ready = json['ready'];
 		 var session = json['session-id'];
-		 
+
 		 $('#command').val('/trust ' + session);
 		 $('#tg-link').attr('href', 'tg://resolve?domain=<?php echo $BOT["username"]; ?>&start=trust-' + session)
-		
+
 		 if (valid == false) {
 		 	stopvar = true;
 			$('#login-box').fadeOut();
 		 }
-		 
+
 		 if (ready == true) {
 		 	window.location = '?sec=session-start';
 		 }
 	  });
 	}
-	
+
 	if ($('#login-box').is(":visible") && $('#error').is(":visible")) {
      $('#error').fadeOut();
    }
    else if ($('#login-box').is(":visible") !== true && $('#error').is(":visible") !== true) {
      $('#error').fadeIn();
    }
-	
+
 }
 
 

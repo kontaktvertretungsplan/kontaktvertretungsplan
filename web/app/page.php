@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Kontakt:Vertretungsplan | milchinsel.de</title>
+  <title>Kontakt:Vertretungsplan</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -84,7 +84,7 @@
           <a href="?p=main">
             <i class="fa fa-th"></i> <span>Übersicht</span>
             <span class="pull-right-container">
-              
+
             </span>
           </a>
         </li>
@@ -93,7 +93,7 @@
           <a href="?p=class">
             <i class="fa fa-calendar"></i> <span>Klassen</span>
             <span class="pull-right-container">
-              
+
             </span>
           </a>
         </li>
@@ -101,7 +101,7 @@
           <a href="?p=notification">
             <i class="fa fa-bell"></i> <span>Benachrichtigung</span>
             <span class="pull-right-container">
-              
+
             </span>
           </a>
         </li>
@@ -111,7 +111,7 @@
           <a href="?p=mod:broadcast">
             <i class="fa fa-comment"></i> <span>Nachricht</span>
             <span class="pull-right-container">
-              
+
             </span>
           </a>
         </li>
@@ -122,7 +122,7 @@
           <a href="?p=admin:user">
             <i class="fa fa-users"></i> <span>Benutzer</span>
             <span class="pull-right-container">
-              
+
             </span>
           </a>
         </li>
@@ -130,7 +130,7 @@
           <a href="?p=admin:password">
             <i class="fa fa-key"></i> <span>Passwort</span>
             <span class="pull-right-container">
-              
+
             </span>
           </a>
         </li>
@@ -138,7 +138,7 @@
           <a href="?p=admin:settings">
             <i class="fa fa-cogs"></i> <span>Einstellungen</span>
             <span class="pull-right-container">
-              
+
             </span>
           </a>
         </li>
@@ -149,7 +149,7 @@
           <a href="?p=api:timetable">
             <i class="fa fa-chain"></i> <span>Stundenplan</span>
             <span class="pull-right-container">
-              
+
             </span>
           </a>
         </li>
@@ -157,7 +157,7 @@
           <a href="?p=api:classes">
             <i class="fa fa-chain"></i> <span>Klassen</span>
             <span class="pull-right-container">
-              
+
             </span>
           </a>
         </li>
@@ -168,7 +168,7 @@
           <a href="?p=cron:timetable">
             <i class="fa fa-refresh"></i> <span>Stundenplan</span>
             <span class="pull-right-container">
-              
+
             </span>
           </a>
         </li>
@@ -176,7 +176,7 @@
           <a href="?p=cron:next">
             <i class="fa fa-refresh"></i> <span>Du hast gleich</span>
             <span class="pull-right-container">
-              
+
             </span>
           </a>
         </li>
@@ -184,7 +184,7 @@
           <a href="?p=cron:class">
             <i class="fa fa-refresh"></i> <span>Klassen</span>
             <span class="pull-right-container">
-              
+
             </span>
           </a>
         </li>
@@ -195,7 +195,7 @@
           <a href="?p=bot:info">
             <i class="fa fa-telegram"></i> <span>Info</span>
             <span class="pull-right-container">
-              
+
             </span>
           </a>
         </li>
@@ -206,7 +206,7 @@
           <a href="?p=stat:log">
             <i class="fa fa-area-chart"></i> <span>Log</span>
             <span class="pull-right-container">
-              
+
             </span>
           </a>
         </li>

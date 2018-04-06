@@ -137,23 +137,23 @@ if($_GET['install'] == 'main') {
 	else {
 		$info_out['school-name'] = 'empty';
 	}
-	
+
 	if($_POST['school-address'] != '') {
 		settingPut('school:address', $_POST['school-address']);
 	}
 	else {
 		$info_out['school-address'] = 'empty';
 	}
-	
+
 	if($_POST['school-url'] != '') {
 		settingPut('school:url', $_POST['school-url']);
 	}
 	else {
 		$info_out['school-url'] = 'empty';
 	}
-	
-	
-	
+
+
+
 	if($_POST['provider-name'] != '') {
 		settingPut('provider:name', $_POST['provider-name']);
 	}
@@ -178,8 +178,8 @@ if($_GET['install'] == 'main') {
 	else {
 		$info_out['provider-mail'] = 'empty';
 	}
-	
-	
+
+
 	if($_POST['api-classes'] != '') {
 		$json = json_decode(file_get_contents($_POST['api-classes']), true);
 		if($json['ok']) {
@@ -204,15 +204,15 @@ if($_GET['install'] == 'main') {
 	else {
 		$info_out['api-plan'] = 'empty';
 	}
-	
-	
+
+
 	if($_POST['bot-token'] != '') {
 		$json = json_decode(file_get_contents('https://api.telegram.org/bot'.$_POST['bot-token'].'/getMe'), true);
 		if($json['ok']) {
 			$me = $json['result'];
 			$webhook = generateRandomString(32);
 			$json = json_decode(file_get_contents('https://api.telegram.org/bot'.$_POST['bot-token'].'/setWebhook?url='.urlencode(settingGet('url').'webhook.php?key='.$webhook)), true);
-			
+
 			if($json['ok'] && $json['result']) {
 				settingPut('webhook', $webhook);
 				settingPut('telegram:token', $_POST['bot-token']);
@@ -226,19 +226,19 @@ if($_GET['install'] == 'main') {
 		else {
 			$info_out['bot-token'] = 'not-valid';
 		}
-		
+
 	}
 	else {
 		$info_out['bot-token'] = 'empty';
 	}
-	
+
 	updateSettingCache();
-	
+
 	$info_url = '';
 	foreach($info_out as $input => $error) {
 		$info_url .= '&info['.$input.']='.$error;
 	}
-	
+
 	header('Location: ?step=1'.$info_url);
 }
 elseif($_GET['install'] == 'user') {
@@ -291,73 +291,111 @@ if(settingGet('telegram:token') == '') {
 
 //==========================================================================
 
-echo '<h1>Kontakt:Vertretungsplan installieren</h1>';
+?>
 
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Kontakt:Vertretungsplan</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="web/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="web/bower_components/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="web/bower_components/Ionicons/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="web/dist/css/AdminLTE.css">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Google Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+<body class="hold-transition login-page">
+	<div class="login-box">
+	  <div class="login-logo">
+	    <a href="?">Kontakt:Vertretungsplan</a>
+	  </div>
+	  <div class="login-subtitle">
+	    <p>Installieren</p>
+	  </div>
+	  <!-- /.login-logo -->
+		<div class="login-box-body">
+<?php
 if($_GET['step'] == 1) {
 	if(count($install) == 0) {
-		echo '<p>Alle wichtigen Konfigurationen sind gespeichert.</p>';
+		echo '<p class="login-box-msg">Alle wichtigen Konfigurationen sind gespeichert.</p>';
 		echo '<p>Starte nun den Bot in deinem Telegram Account.</p>';
-		
+
 		echo '<ul>';
 		$BOT = getBotInfo();
 		echo '<li>Benutzername: '.$BOT['username'].'</li>';
 		echo '</ul>';
-		
+
 		echo '<p>Fertig?</p>';
-		echo '<a href="?step=2">weiter</a>';
+		echo '<a href="?step=2" class="btn btn-success btn-block btn-flat btn-lg">weiter</a>';
 	}
 	else {
 		echo '<form method="POST" action="?install=main">';
 		if(count($install['school']) != 0) {
-			echo '<h2>Schulinformationen</h2>';
+			echo '<p class="login-box-msg">Schulinformationen</p>';
 			if($install['school']['name']) {
-				echo '<input type="text" name="school-name" placeholder="Schulname" required><br>';
+				echo '<input type="text" name="school-name" placeholder="Schulname" required class="form-control"><br>';
 			}
 			if($install['school']['address']) {
-				echo '<input type="text" name="school-address" placeholder="Schul Adresse" required><br>';
+				echo '<input type="text" name="school-address" placeholder="Schul Adresse" required class="form-control"><br>';
 			}
 			if($install['school']['url']) {
-				echo '<input type="url" name="school-url" placeholder="Schul Website" required><br>';
+				echo '<input type="url" name="school-url" placeholder="Schul Website" required class="form-control"><br>';
 			}
 			echo '<br>';
 		}
-		
+
 		if(count($install['provider']) != 0) {
-			echo '<h2>Anbieterinformationen</h2>';
+			echo '<p class="login-box-msg">Anbieterinformationen</p>';
 			if($install['provider']['name']) {
-				echo '<input type="text" name="provider-name" placeholder="Anbieter Name" required><br>';
+				echo '<input type="text" name="provider-name" placeholder="Anbieter Name" required class="form-control"><br>';
 			}
 			if($install['provider']['address']) {
-				echo '<input type="text" name="provider-address" placeholder="Anbieter Adresse" required><br>';
+				echo '<input type="text" name="provider-address" placeholder="Anbieter Adresse" required class="form-control"><br>';
 			}
 			if($install['provider']['url']) {
-				echo '<input type="url" name="provider-url" placeholder="Anbieter Website" required><br>';
+				echo '<input type="url" name="provider-url" placeholder="Anbieter Website" required class="form-control"><br>';
 			}
 			if($install['provider']['mail']) {
-				echo '<input type="email" name="provider-mail" placeholder="Anbieter E-Mail Adresse" required><br>';
+				echo '<input type="email" name="provider-mail" placeholder="Anbieter E-Mail Adresse" required class="form-control"><br>';
 			}
 			echo '<br>';
 		}
-		
+
 		if(count($install['api']) != 0) {
-			echo '<h2>API Urls</h2>';
+			echo '<p  class="login-box-msg">API Urls</p>';
 			if($install['api']['classes']) {
-				echo '<input type="url" name="api-classes" placeholder="API Klassen" required><br>';
+				echo '<input type="url" name="api-classes" placeholder="API Klassen" required class="form-control"><br>';
 			}
 			if($install['api']['plan']) {
-				echo '<input type="url" name="api-plan" placeholder="API Stundenplan" required><br>';
+				echo '<input type="url" name="api-plan" placeholder="API Stundenplan" required class="form-control"><br>';
 			}
 			echo '<br>';
 		}
-		
+
 		if(count($install['bot']) != 0) {
-			echo '<h2>Telegram Bot API</h2>';
+			echo '<p class="login-box-msg">Telegram Bot API</p>';
 			if($install['bot']['token']) {
-				echo '<input type="text" name="bot-token" placeholder="Bot Token" required><br>';
+				echo '<input type="text" name="bot-token" placeholder="Bot Token" required class="form-control"><br>';
 			}
 			echo '<br>';
 		}
-		echo '<button>Speichern</button>';
+		echo '<button class="btn btn-success btn-block btn-flat btn-lg">Speichern</button>';
 		echo '</form>';
 	}
 }
@@ -367,14 +405,14 @@ elseif($_GET['step'] == 2) {
 	if($statement->rowCount() == 0) {
 		echo '<p>Dein Name sollte nun in der Liste unten auftauchen.</p>';
 		echo '<p>Nicht der Fall?</p>';
-		echo '<a href="?step=2">neu laden</a>';
-		echo '<h2>Angemeldete Benutzer</h2>';
-		
+		echo '<a href="?step=2" class="btn btn-success btn-block btn-flat btn-lg">neu laden</a>';
+		echo '<p class="login-box-msg">Angemeldete Benutzer</p>';
+
 		echo '<ul>';
 		$statement = $PDO->prepare("SELECT ID, name FROM user");
 		$statement->execute();
 		foreach($statement->fetchAll() as $row) {
-			echo '<li>'.$row['name'].' <a href="?install=user&id='.$row['ID'].'">Zum Admin machen</a></li>';
+			echo '<li>'.$row['name'].' <a href="?install=user&id='.$row['ID'].'" class="btn btn-success btn-block btn-flat btn-lg">Zum Admin machen</a></li>';
 		}
 		echo '</ul>';
 	}
@@ -388,10 +426,22 @@ elseif($_GET['step'] == 2) {
 		echo '<li>Cronjob für Stundenplan anlegen</li>';
 		echo '<li>Cronjob für "Du hast gleich" anlegen</li>';
 		echo '</ul>';
-		
-		echo '<a href="./">Zur Webconfig</a>';
+
+		echo '<a href="./" class="btn btn-success btn-block btn-flat btn-lg">Zur Webconfig</a>';
 	}
 }
 else {
-	echo '<a href="?step=1">Installation starten</a>';
+	echo '<a href="?step=1" class="btn btn-success btn-block btn-flat btn-lg">Installation starten</a>';
 }
+?>
+		</div>
+		<!-- /.login-box-body -->
+	</div>
+	<!-- /.login-box -->
+
+	<!-- jQuery 3 -->
+	<script src="web/bower_components/jquery/dist/jquery.min.js"></script>
+	<!-- Bootstrap 3.3.7 -->
+	<script src="web/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	</body>
+</html>
