@@ -30,7 +30,7 @@ function buildNote($input) {
 	if(count($input) > 0) {
 		foreach($input as $note) {
 			$out .= $note[0].'
-	';
+';
 		}
 		
 		$out = substr($out, 0, -1);
