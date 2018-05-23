@@ -1,0 +1,26 @@
+{
+  "name": "Stop",
+  "version": "0.1",
+  "description" : "Löscht nutzer",
+  "url": "https://moritz-fromm.tk/",
+  "author": [
+    {
+      "name": "Moritz Fromm",
+      "url": "https://moritz-fromm.tk/"
+    }
+  ],
+  "integration": {
+    "commands": [
+      {
+        "command": "stop",
+        "shortcut": "",
+        "alias": "Stop",
+        "significance": "10000"
+      }
+    ],
+    "start": {
+      "name": "",
+      "significance": ""
+    }
+ }
+}
